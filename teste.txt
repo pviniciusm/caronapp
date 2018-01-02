@@ -1,4 +1,0 @@
-Olá mundo!
-Este é o próximo teste de escrita.
-
-Testando o push automatico!
