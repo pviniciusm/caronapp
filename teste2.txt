@@ -1,2 +1,4 @@
 Arquivo de testes!!
-End file
+End file.
+That was not the end of file.
+This is actually the EOF.
