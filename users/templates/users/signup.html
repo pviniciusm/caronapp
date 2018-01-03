@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <title>CaronApp - Signup</title>
+</head>
+<body>
+    <form method="POST" action="/signup/register" id="reg_form"> 
+        {% csrf_token %}
+        <h1>Signup</h1>
+        <p><input id="post-name" type="text" name="nome" placeholder="Digite seu nome"></p>
+        <p><input id="post-email" type="text" name="email" placeholder="Digite seu email"></p>
+        <p><input id="post-pass" type="password" name="senha" placeholder="Digite sua senha"></p>
+        <p><input type="password" placeholder="Digite seu senha novamente"></p>
+        <p><input id="post-city" type="text" name="cidade" placeholder="Digite sua cidade"></p>
+        <p><input id="post-state" type="text" name="estado" placeholder="Digite seu estado"></p>
+        <p><input type="submit"></p>
+    </form>
+
+    <script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>
