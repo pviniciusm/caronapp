@@ -7,16 +7,13 @@ import json
 # Create your views here.
 def homepage(request):
     users = Puser.objects.all()
-    print("chegou aqui")
     return render(request, 'users/homepage.html', {'users':users})
 
 def signup(request):
     return render(request, 'users/signup.html', {})
 
 def register(request):
-    print("chegou aqui")
     if request.method == 'POST':
-        print("aqui também")
         name = request.POST.get('name')
         email = request.POST.get('email')
         password = request.POST.get('password')
