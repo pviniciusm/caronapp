@@ -3,6 +3,10 @@ h1{
 }
 
 #home{
-    background-color: red;
-    color:green;
+    background-image: url('/static/img/estrada-1.jpg');
+    background-size: cover;
 }
+
+html, body {
+    height: 100%;
+  }

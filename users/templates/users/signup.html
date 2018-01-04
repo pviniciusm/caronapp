@@ -17,18 +17,126 @@
 
     <title>CaronApp - Signup</title>
 </head>
-<body>
-    <form method="POST" action="/signup/register" id="reg_form"> 
-        {% csrf_token %}
-        <h1>Signup</h1>
-        <p><input id="post-name" type="text" name="nome" placeholder="Digite seu nome"></p>
-        <p><input id="post-email" type="text" name="email" placeholder="Digite seu email"></p>
-        <p><input id="post-pass" type="password" name="senha" placeholder="Digite sua senha"></p>
-        <p><input type="password" placeholder="Digite seu senha novamente"></p>
-        <p><input id="post-city" type="text" name="cidade" placeholder="Digite sua cidade"></p>
-        <p><input id="post-state" type="text" name="estado" placeholder="Digite seu estado"></p>
-        <p><input type="submit"></p>
-    </form>
+
+<body style="background-color:lightyellow; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+
+    <div class="container-fluid" style="background-color:#31393c; min-height:10%;">
+        <div class="row">
+            <div class="col-6 offset-1" style="font-family:fantasy; color:#eee; font-size:26px; padding-top:1%; padding-bottom:1%;"><a href="/">Caronapp</a></div>
+        </div>
+    </div>
+
+    <div class="container h-100 align-items-center" style="margin-top:2%; margin-bottom:5%" >
+        <div class="row h-100 align-items-center">
+            <div class="col-8 offset-2" style="border: 1px solid #ddd; border-radius:0 0 5px 5px; background-color:rgb(241, 237, 213);">
+                <div class="row">
+                    <div class="col" style="background-color:#2176ff; padding:20px; color:#fff;">
+                        CREATE AN ACCOUNT
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" style="background-color:#33a1fd; height:4px;">
+                    </div>
+                </div>
+                <div class="row" style="padding:10px; margin-top:10px">
+                    <div class="col-12">
+                        <form method="POST" action="/signup/register" id="reg_form"> 
+                            {% csrf_token %}
+                            
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="post-fname">Primeiro Nome</label>
+                                        <input type="text" class="form-control" id="post-fname" placeholder="Enter name">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="post-lname">Sobrenome</label>
+                                        <input type="text" class="form-control" id="post-lname" placeholder="Enter name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12"> 
+                                    <div class="form-group">        
+                                        <div class="row">
+                                            <div class="col-12"><label for="post-birthday">Data de nascimento</label></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                {{ form.birthday }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" id="post-email" placeholder="Enter email">
+                                    </div>        
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="post-pass">Senha</label>
+                                        <input type="password" class="form-control" id="post-pass" placeholder="Password">
+                                    </div>        
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="post-pass-repeat">Repita sua senha</label>
+                                        <input type="password" class="form-control" id="post-pass-repeat" placeholder="Password">
+                                    </div>        
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="post-city">Cidade</label>
+                                        <select class="form-control" id="post-city">
+                                            <option value="rosul">Rosário do Sul</option>
+                                            <option value="sm">Santa Maria</option>
+                                            <option value="alegrete">Alegrete</option>
+                                            <option value="cacequi">Cacequi</option>
+                                            <option value="outro">Outro</option>
+                                        </select>
+                                    </div>        
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="post-city">Estado</label>
+                                        <select class="form-control" id="post-state">
+                                            <option value="rs">RS</option>
+                                            <option value="outro">Outro</option>
+                                        </select>
+                                    </div>        
+                                </div>
+                            </div>
+                            <br>
+                            <p style="height:4px; background-color:#2176ff"></p>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <button style="float:left" type="submit" class="btn btn-primary">Cadastre-se</button>
+                                </div>
+                            </div>
+                        </form>
+                        <br><br>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
 
     <script src="{% static 'js/register.js' %}"></script>
 </body>

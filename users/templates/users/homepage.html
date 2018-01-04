@@ -18,11 +18,51 @@
 
     <title>CaronApp</title>
 </head>
-<body>
-    <p>uhasuhasuh</p>
-    <div id="home">
-        <p>huasahus</p>
-        <p>gggggggggggg</p>
+<body id="home">
+
+        <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div style="position:absolute; top:7%">
+                        <h1>CaronApp</h1>
+                        <h3>O melhor app de caronas da região!</h3>
+                    </div>
+                </div>
+        </div>
+
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-5 logo-box d-none d-lg-block" style="background-color:darkslategray; border-radius:10px 0 0 10px; padding-top:8%; padding-left:8%">
+                        <img src="{% static 'img/car-flat.png' %}" alt="" class="img-responsive" width="160">
+                    </div>
+
+                    <div class="col-lg-7 login-box" style="background-color:#fff; padding:20px">
+                        <form action="/login" method="POST"> {% csrf_token %}
+                            <div class="form-group">
+                                <label for="login-email">Email address</label>
+                                <input type="text" class="form-control" name="login-email" placeholder="Enter email">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="login-pass">Password</label>
+                                <input type="password" class="form-control" name="login-pass" placeholder="Password">
+                            </div>
+                            
+                            <div>
+                                <button style="float:left" type="submit" class="btn btn-primary">Log in</button>
+                                <div style="float:left; font-size:14px; padding:10px; margin-left:10px">Need an account? | <a href="/signup">Register</a></div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                    
+            </div>
+            
+        </div>
     </div>
+
+
 </body>
 </html>

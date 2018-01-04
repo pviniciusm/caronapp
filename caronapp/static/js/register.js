@@ -67,8 +67,12 @@ function register() {
         url: '/signup/register/',
         type: 'POST',
         data: {
-            name: $('#post-name').val(),
+            fname: $('#post-fname').val(),
+            lname: $('#post-lname').val(),
             email: $('#post-email').val(), 
+            bdayday: $('#id_birthday_day').val(),
+            bdaymonth: $('#id_birthday_month').val(),
+            bdayyear: $('#id_birthday_year').val(),
             password: $('#post-pass').val(), 
             city: $('#post-city').val(),
             state: $('#post-state').val()
@@ -76,9 +80,9 @@ function register() {
 
         success: function(json){
             if(json['error'] == 'user_already_exists'){
-                console.log('error!!!!!!');
+                alert('Usuário já existe!');
             }else{
-                console.log('user created!');
+                alert('Usuário cadastrado!');
             }
         },
 

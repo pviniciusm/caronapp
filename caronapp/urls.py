@@ -21,5 +21,7 @@ import users.views as usv
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', usv.homepage),
-    url('^signup', include('users.urls')),
+    url(r'^logout$', usv.log_out),
+    url(r'^login$', usv.log_in),
+    url(r'^signup', include('users.urls')),
 ]
