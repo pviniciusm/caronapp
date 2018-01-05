@@ -5,7 +5,7 @@ YEARS= [x for x in range(1940,2010)]
 
 class PuserForm(forms.ModelForm):
     birthday = forms.DateField(widget=forms.SelectDateWidget(
-        attrs={'class': 'form-control col-4', 'style': 'float:left'}, years=YEARS),
+        attrs={'class': 'form-control form-control-sm col-4', 'style': 'float:left'}, years=YEARS),
         )
 
     class Meta:

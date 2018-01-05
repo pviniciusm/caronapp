@@ -19,10 +19,122 @@
     <title>CaronApp</title>
 </head>
 <body>
+    <nav class="navbar   navbar-dark bg-faded fixed-top" style="background-color:#31393C">
+        <a class="navbar-brand" href="/">CaronApp</a>
+        <a class="navbar-brand" style="float:right" href="/logout">Sair</a>
+    </nav>
+              
 
-    <h1>Bem vindo ao CaronApp</h1>
-    <h3>Voce esta logado no email {{ user.email }}</h3>
-    <hr>
-    <a href="/logout">Sair</a>
+    <br> <br> <br>
+
+    
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-lg-10 offset-lg-1">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card" style="padding:15px; padding-top:0; background-color:#f7f7f7">
+                      <div class="row align-items-center profile-card">
+                        <div class="col-5 profile-media">
+                            <img class="card-img-top" src="{% static 'img/profile/blank-profile.png' %}" alt="Card image cap">
+                            <div class="row profile-media-row justify-content-center">
+                              <span><a href="/"><img src="{% static 'img/icons/fb-icon.png' %}" width="28" alt="Facebook"></a></span>
+                              <span><a href="/"><img id="tt-icon" src="{% static 'img/icons/tt-icon.png' %}" width="28" alt="Twitter"></a></span>
+                            </div>
+                        </div>
+                        <div class="col-7 profile-id">
+                          
+                          <h5>{{user.first_name}} {{user.last_name}}</h5>
+                          <div class="row align-items-center justify-content-center">
+                              <span><img src="{% static 'img/icons/local-icon.png' %}" width="20" alt=""></span>
+                              <small style="color:#fafafa; padding-top:5px; padding-left:5px;">Santa Maria - RS</small>
+                          </div>
+
+                          <div class="row align-items-center justify-content-center">
+                                <span><img src="{% static 'img/icons/world-icon.ico' %}" width="20" alt=""></span>
+                                <small style="color:#fafafa; padding-top:5px; padding-left:5px; line-height:1  "><b>10</b> destinos</small>
+                          </div>
+                          
+                        </div>
+                      </div>
+                      
+                      <div class="row profile-separator"></div>
+
+                      <div class="card-block" style="padding:5px 0;">
+                        <div class="row profile-data">
+                          <div class="col-4 text-center">
+                              <b><p>10</p></b>
+                              <small><b>Caronas</b></small>
+                          </div>
+                          <div class="col-4 text-center">
+                              <b><p>10</p></b>
+                              <small><b>Solicitações</b></small>
+                            </div>
+                            <div class="col-4 text-center">
+                                <b><p>10</p></b>
+                              <small><b>Contatos</b></small>
+                              </div>
+                        </div>
+                      </div>
+
+                      <div class="row profile-separator"></div>
+                      
+                      <div class="row">
+                        <div class="col-12">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                              </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div class="col-8">
+                        <div class="card-group">
+                                <div class="card">
+                                  <img class="card-img-top" src="..." alt="Card image cap">
+                                  <div class="card-block">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  </div>
+                                  <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <img class="card-img-top" src="..." alt="Card image cap">
+                                  <div class="card-block">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                  </div>
+                                  <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                  </div>
+                                </div>
+                                <div class="card">
+                                  <img class="card-img-top" src="..." alt="Card image cap">
+                                  <div class="card-block">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                  </div>
+                                  <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                  </div>
+                                </div>
+                              </div>
+                </div>
+            </div>
+          </div>
+
+            
+        </div>
+    </div>
+
+    <div class="container" style="height:1024px">
+      
+    </div>
 </body>
 </html>

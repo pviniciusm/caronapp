@@ -56,7 +56,38 @@ $(function() {
 
 $('#reg_form').on('submit', function(event){
     event.preventDefault();
-    console.log('log submitted');
+    
+    var must_return = false;
+
+    
+    $("#post-pass").next().html("Digite uma senha válida.");
+
+    $("#reg_form input").each(function(){
+        if(!$(this).val() && !$(this).hasClass("optional")){ 
+            console.log($(this).attr("id")+" is empty");
+            must_return = true;
+        }
+    });
+
+
+    if($("#post-pass").val() != $("#post-pass-repeat").val()){
+        console.log("Senhas diferentes");
+
+        $("#post-pass-repeat").next().html("As senhas não conferem.");
+        $("#post-pass").next().html("");
+        $("#post-pass-repeat").removeClass("is-valid");
+        $("#post-pass").removeClass("is-valid");
+
+        $("#post-pass").addClass("is-invalid");
+        $("#post-pass-repeat").addClass("is-invalid");
+        must_return = true;
+    }else{
+        $("#post-pass-repeat").removeClass("is-invalid");
+        $("#post-pass").removeClass("is-invalid");
+    }
+
+    if(must_return) return;
+
     register();
 });
 
@@ -81,14 +112,35 @@ function register() {
         success: function(json){
             if(json['error'] == 'user_already_exists'){
                 alert('Usuário já existe!');
-            }else{
-                alert('Usuário cadastrado!');
+                return;
             }
+            else{
+                window.location.replace("/");
+            }
+
         },
 
         error: function(xhr,errmsg,err) {
             alert('error!!');
+            $('#post-pass').val() = "";
         }
 
     });
 };
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+
+  window.addEventListener('load', function() {
+    var form = document.getElementById('reg_form');
+    form.addEventListener('submit', function(event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  }, false);
+})();

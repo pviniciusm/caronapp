@@ -1,3 +1,11 @@
+*{
+    --main-bg-color:#2176ff;
+    --main-blue-color:#33A1FD;
+    --main-black-color:#31393C;
+    --main-yellow-color:#FDCA40;
+    --main-orange-color:#F79824;
+}
+
 h1{
     color: midnightblue;
 }
@@ -9,4 +17,76 @@ h1{
 
 html, body {
     height: 100%;
-  }
+    background-color: #fefefe;
+}
+
+.form-hr{
+    height:4px; 
+    background-color:#2176ff;
+}
+
+.is-invalid{
+    border-color: #dc3545 !important;
+}
+
+.no-hover-link{
+    text-decoration: none;
+    color: #fff;
+}
+
+.no-hover-link:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.profile-media-row{
+    padding:5px;
+}
+
+.profile-media-row span:not(:first-child){
+    margin-left:10px;
+}
+
+.profile-id{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.profile-id h4{
+    color:var(--main-black-color);
+}
+
+.profile-media > img:first-child{
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px var(--main-bg-color);
+}
+
+.profile-card{
+    padding:15px 0;
+    background-color: var(--main-blue-color);
+}
+
+.profile-separator{
+    height:3px; 
+    background-color:var(--main-black-color);
+}
+
+#tt-icon{
+    border:2px solid var(--main-bg-color); 
+    border-radius:20px
+}
+
+.profile-data small{
+    font-size:12px;
+    padding:0; margin:0;
+    text-align: center;
+}
+.profile-data p{
+    margin:0; padding:0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.profile-data{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    word-wrap: normal !important;
+}

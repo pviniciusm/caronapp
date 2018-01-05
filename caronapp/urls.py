@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^logout$', usv.log_out),
     url(r'^login$', usv.log_in),
     url(r'^signup', include('users.urls')),
+    url(r'^welcome$', usv.welcome),
 ]

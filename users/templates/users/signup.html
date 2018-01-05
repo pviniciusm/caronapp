@@ -20,18 +20,20 @@
 
 <body style="background-color:lightyellow; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
 
-    <div class="container-fluid" style="background-color:#31393c; min-height:10%;">
-        <div class="row">
-            <div class="col-6 offset-1" style="font-family:fantasy; color:#eee; font-size:26px; padding-top:1%; padding-bottom:1%;"><a href="/">Caronapp</a></div>
+    <div class="container-fluid align-items-center" style="background-color:#2176ff; min-height:15%;">
+        <div class="row align-items-center">
+            <div class="col-6 offset-1" style="font-family:fantasy; color:#eee; font-size:26px; padding-top:2%; padding-bottom:2%;">
+                <a href="/" class="no-hover-link">Caronapp</a>
+            </div>
         </div>
     </div>
 
-    <div class="container h-100 align-items-center" style="margin-top:2%; margin-bottom:5%" >
-        <div class="row h-100 align-items-center">
-            <div class="col-8 offset-2" style="border: 1px solid #ddd; border-radius:0 0 5px 5px; background-color:rgb(241, 237, 213);">
+    <div class="container" style="margin-top:-5%;" >
+        <div class="row">
+            <div class="col-8 offset-2" style=" border-radius:0 0 5px 5px; background-color:rgb(241, 237, 213);">
                 <div class="row">
-                    <div class="col" style="background-color:#2176ff; padding:20px; color:#fff;">
-                        CREATE AN ACCOUNT
+                    <div class="col text-center" style="background-color:#2176ff; margin:0; padding:30px; color:#fff; font-size:28px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                        FAÇA SEU CADASTRO!
                     </div>
                 </div>
                 <div class="row">
@@ -40,26 +42,41 @@
                 </div>
                 <div class="row" style="padding:10px; margin-top:10px">
                     <div class="col-12">
-                        <form method="POST" action="/signup/register" id="reg_form"> 
+                        <form method="POST" action="/signup/register" id="reg_form" novalidate> 
                             {% csrf_token %}
                             
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="post-fname">Primeiro Nome</label>
-                                        <input type="text" class="form-control" id="post-fname" placeholder="Enter name">
+                                        <input type="text" class="form-control form-control-sm" id="post-fname" placeholder="Digite o nome" required>
+                                        <div class="invalid-feedback">
+                                            Digite um nome válido.
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="post-lname">Sobrenome</label>
-                                        <input type="text" class="form-control" id="post-lname" placeholder="Enter name">
+                                        <input type="text" class="form-control form-control-sm" id="post-lname" placeholder="Digite o sobrenome" required>
+                                        <div class="invalid-feedback">
+                                            Digite um sobrenome válido.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-12"> 
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="post-email">Email</label>
+                                        <input type="email" class="form-control form-control-sm" id="post-email" placeholder="Digite o email" required>
+                                        <div class="invalid-feedback">
+                                            Digite um e-mail válido.
+                                        </div>
+                                    </div>        
+                                </div>
+                                <div class="col-6"> 
                                     <div class="form-group">        
                                         <div class="row">
                                             <div class="col-12"><label for="post-birthday">Data de nascimento</label></div>
@@ -74,33 +91,50 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col">
+                                    <br>
+                                    <p class="form-hr"></p>
+                                    <br>
+                                </div>
+                            </div>
+                            
+                            <div class="row align-items-center">
+                                <div class="col-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
-                                        <input type="email" class="form-control" id="post-email" placeholder="Enter email">
+                                        <label for="post-pass">Senha</label>
+                                        <input type="password" class="form-control form-control-sm" id="post-pass" placeholder="Password" required>
+                                        <div class="invalid-feedback">
+                                            Digite uma senha válida.
+                                        </div>
                                     </div>        
+                                </div>
+                                <div class="col-6">
+                                    <small id="passwordHelpInline" class="form-text text-muted align-center">
+                                        Your password must be 8-20 characters long.
+                                    </small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="post-pass">Senha</label>
-                                        <input type="password" class="form-control" id="post-pass" placeholder="Password">
-                                    </div>        
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
                                         <label for="post-pass-repeat">Repita sua senha</label>
-                                        <input type="password" class="form-control" id="post-pass-repeat" placeholder="Password">
+                                        <input type="password" class="form-control form-control-sm" id="post-pass-repeat" placeholder="Password" required>
+                                        <div class="invalid-feedback">
+                                            As senhas precisam conferir.
+                                        </div>
                                     </div>        
                                 </div>
+                            </div>
+                            
+                            <div class="row">
+                                <hr>
                             </div>
 
                             <div class="row">
                                 <div class="col-6">
-                                    <div class="form-group">
+                                    <div class="form-group ">
                                         <label for="post-city">Cidade</label>
-                                        <select class="form-control" id="post-city">
+                                        <select class="form-control form-control-sm" id="post-city">
                                             <option value="rosul">Rosário do Sul</option>
                                             <option value="sm">Santa Maria</option>
                                             <option value="alegrete">Alegrete</option>
@@ -112,30 +146,52 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="post-city">Estado</label>
-                                        <select class="form-control" id="post-state">
+                                        <select class="form-control form-control-sm" id="post-state">
                                             <option value="rs">RS</option>
                                             <option value="outro">Outro</option>
                                         </select>
                                     </div>        
                                 </div>
                             </div>
-                            <br>
-                            <p style="height:4px; background-color:#2176ff"></p>
-
                             <div class="row">
-                                <div class="col-6">
-                                    <button style="float:left" type="submit" class="btn btn-primary">Cadastre-se</button>
+                                <hr>
+                            </div>
+
+                            <p class="form-hr"></p>
+                            
+                            <div class="row">
+                                <hr>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="form-check">
+                                        <input class="form-check-input optional" type="checkbox" value="" id="form-terms" disabled>
+                                        <label class="form-check-label" for="defaultCheck2">
+                                            Declaro que li e aceito os <a href="">Termos e Condições</a>.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="row justify-content-center">
+                                        <div class="col-9">
+                                                <button type="submit" class="btn btn-primary" style="width:100%">Cadastre-se</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
-                        <br><br>
+                        <br>
+                        <br>
                     </div>
-                </div>
-                
+                </div>   
             </div>
         </div>
     </div>
     
+    <div class="container" style="height:100px;">
+
+    </div>
     
 
     <script src="{% static 'js/register.js' %}"></script>
